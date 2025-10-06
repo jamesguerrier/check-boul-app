@@ -20,6 +20,8 @@ inputs.forEach(input => {
 
 document.getElementById("checkBtn").addEventListener("click", () => {
     const inputs = document.querySelectorAll(".num-input");
+
+    // Collect values and convert "00"-"09" to 0-9
     const inputValues = Array.from(inputs)
         .map(input => {
             let val = input.value.trim();
@@ -28,6 +30,10 @@ document.getElementById("checkBtn").addEventListener("click", () => {
         })
         .filter(v => v !== null);
 
+    // Count how many times each number appears
+    const counts = {};
+    inputValues.forEach(num => counts[num] = (counts[num] || 0) + 1);
+
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = "";
 
@@ -35,7 +41,11 @@ document.getElementById("checkBtn").addEventListener("click", () => {
 
     for (const arr of data) {
         const matches = arr.filter(num => inputValues.includes(num));
-        if (matches.length >= 2) {
+
+        // If at least two different matches
+        // OR one match that appears twice or more among inputs
+        const hasRepeatedInput = matches.some(num => counts[num] >= 2);
+        if (matches.length >= 2 || hasRepeatedInput) {
             foundArrays.push({ arr, matches });
         }
     }
