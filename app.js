@@ -16,3 +16,40 @@ inputs.forEach(input => {
         if (input.value > 99) input.value = '99';
     });
 });
+
+
+document.getElementById("checkBtn").addEventListener("click", () => {
+    const inputs = document.querySelectorAll(".num-input");
+    const inputValues = Array.from(inputs)
+        .map(input => {
+            let val = input.value.trim();
+            if (val === "") return null;
+            return val.startsWith("0") && val.length === 2 ? parseInt(val[1]) : parseInt(val);
+        })
+        .filter(v => v !== null);
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";
+
+    let foundArrays = [];
+
+    for (const arr of data) {
+        const matches = arr.filter(num => inputValues.includes(num));
+        if (matches.length >= 2) {
+            foundArrays.push({ arr, matches });
+        }
+    }
+
+    if (foundArrays.length === 0) {
+        resultDiv.innerHTML = "<p>No matches found.</p>";
+    } else {
+        foundArrays.forEach(item => {
+            let html = item.arr
+                .map(num => item.matches.includes(num)
+                    ? `<span class="highlight">${num}</span>`
+                    : num
+                ).join(", ");
+            resultDiv.innerHTML += `<p>[ ${html} ]</p>`;
+        });
+    }
+});
