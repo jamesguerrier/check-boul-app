@@ -11,62 +11,137 @@
 
 <body>
 
-    <h1>Check Boulettte</h1>
+    <div class="box">
+        <div class="toggle" id="toggle">
+            <div class="slider"></div>
+            <span>SUN</span>
+            <span>MOON</span>
+        </div>
+        <div class="moonContent" id="moonContent">
+            <h1>Check Boulettte</h1>
 
-    <div class="header-groups">
-        <h2>MIDI</h2>
-        <h2>SOIR</h2>
+            <div class="header-groups">
+                <h2>MIDI</h2>
+                <h2>SOIR</h2>
+            </div>
+
+            <div class="container">
+
+                <!-- Row 1 -->
+                <div class="row" id="row1">
+                    <div class="column-group" id="midi1">
+                        <input type="number" id="r1c1" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c2" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c3" class="num-input" min="0" max="99">
+                    </div>
+                    <div class="column-group" id="soir1">
+                        <input type="number" id="r1c4" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c5" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c6" class="num-input" min="0" max="99">
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="row" id="row2">
+                    <div class="column-group" id="midi2">
+                        <input type="number" id="r2c1" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c2" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c3" class="num-input" min="0" max="99">
+                    </div>
+                    <div class="column-group" id="soir2">
+                        <input type="number" id="r2c4" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c5" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c6" class="num-input" min="0" max="99">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="row" id="row3">
+                    <div class="column-group" id="midi3">
+                        <input type="number" id="r3c1" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c2" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c3" class="num-input" min="0" max="99">
+                    </div>
+                    <div class="column-group" id="soir3">
+                        <input type="number" id="r3c4" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c5" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c6" class="num-input" min="0" max="99">
+                    </div>
+                </div>
+
+            </div>
+            <div id="result" class="result"></div>
+
+            <button id="checkBtn">Check</button>
+
+        </div>
+        <div class="sunContent" id="sunContent" style="display:none;">
+            <h1>Check Boulettte</h1>
+
+            <div class="header-groups">
+                <h2 style="color:white">MIDI</h2>
+                <h2 style="color:white">SOIR</h2>
+            </div>
+            <div class="container">
+
+                <!-- Row 1 -->
+                <div class="row" id="row1">
+                    <div class="column-group" id="midi1">
+                        <input type="number" id="r1c1" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c2" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c3" class="num-input" min="0" max="99">
+                    </div>
+                    <div class="column-group" id="soir1">
+                        <input type="number" id="r1c4" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c5" class="num-input" min="0" max="99">
+                        <input type="number" id="r1c6" class="num-input" min="0" max="99">
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="row" id="row2">
+                    <div class="column-group" id="midi2">
+                        <input type="number" id="r2c1" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c2" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c3" class="num-input" min="0" max="99">
+                    </div>
+                    <div class="column-group" id="soir2">
+                        <input type="number" id="r2c4" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c5" class="num-input" min="0" max="99">
+                        <input type="number" id="r2c6" class="num-input" min="0" max="99">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="row" id="row3">
+                    <div class="column-group" id="midi3">
+                        <input type="number" id="r3c1" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c2" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c3" class="num-input" min="0" max="99">
+                    </div>
+                    <div class="column-group" id="soir3">
+                        <input type="number" id="r3c4" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c5" class="num-input" min="0" max="99">
+                        <input type="number" id="r3c6" class="num-input" min="0" max="99">
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="resulting"></div>
+            <div class="buttons">
+                <button id="btn-lunMar">monday-thuesday</button>
+                <button id="btn-marMer">tuesday-wednesday</button>
+                <button id="btn-merJeu">wednesday-thursday</button>
+                <button id="btn-jeuVen">thursday-friday</button>
+                <button id="btn-vensam">friday-saturday</button>
+                <button id="btn-samdim">saturday-sunday</button>
+                <button id="btn-dimlun">sunday-monday</button>
+            </div>
+        </div>
+
     </div>
 
-    <div class="container">
-
-        <!-- Row 1 -->
-        <div class="row" id="row1">
-            <div class="column-group" id="midi1">
-                <input type="number" id="r1c1" class="num-input" min="0" max="99">
-                <input type="number" id="r1c2" class="num-input" min="0" max="99">
-                <input type="number" id="r1c3" class="num-input" min="0" max="99">
-            </div>
-            <div class="column-group" id="soir1">
-                <input type="number" id="r1c4" class="num-input" min="0" max="99">
-                <input type="number" id="r1c5" class="num-input" min="0" max="99">
-                <input type="number" id="r1c6" class="num-input" min="0" max="99">
-            </div>
-        </div>
-
-        <!-- Row 2 -->
-        <div class="row" id="row2">
-            <div class="column-group" id="midi2">
-                <input type="number" id="r2c1" class="num-input" min="0" max="99">
-                <input type="number" id="r2c2" class="num-input" min="0" max="99">
-                <input type="number" id="r2c3" class="num-input" min="0" max="99">
-            </div>
-            <div class="column-group" id="soir2">
-                <input type="number" id="r2c4" class="num-input" min="0" max="99">
-                <input type="number" id="r2c5" class="num-input" min="0" max="99">
-                <input type="number" id="r2c6" class="num-input" min="0" max="99">
-            </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="row" id="row3">
-            <div class="column-group" id="midi3">
-                <input type="number" id="r3c1" class="num-input" min="0" max="99">
-                <input type="number" id="r3c2" class="num-input" min="0" max="99">
-                <input type="number" id="r3c3" class="num-input" min="0" max="99">
-            </div>
-            <div class="column-group" id="soir3">
-                <input type="number" id="r3c4" class="num-input" min="0" max="99">
-                <input type="number" id="r3c5" class="num-input" min="0" max="99">
-                <input type="number" id="r3c6" class="num-input" min="0" max="99">
-            </div>
-        </div>
-
-    </div>
-
-    <button id="checkBtn">Check</button>
-
-    <div id="result" class="result"></div>
 
 
     <script src="app.js"></script>
