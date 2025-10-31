@@ -96,7 +96,7 @@ const bool = {
     lunMar: {
         firstLM: {
             lundi: [7, 54],
-            mardi: [50, 10, 70],
+            mardi: [55, 10, 70],
         },
         secondLM: {
             lundi: [89, 57, 61],
@@ -176,6 +176,7 @@ const bool = {
         },
         secondDL: {
             dimanche: [52, 48, 81],
+            lundi: [25, 18, 84]
         }
     }
 }
