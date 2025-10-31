@@ -4,6 +4,8 @@ data = [
 ]
 
 
+
+
 const toggle = document.getElementById('toggle');
 
 const sunContent = document.getElementById('sunContent');
